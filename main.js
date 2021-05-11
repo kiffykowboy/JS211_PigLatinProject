@@ -1,5 +1,6 @@
 'use strict';
 
+const { strict } = require('assert');
 // brings in the assert module for unit testing
 const assert = require('assert');
 // brings in the readline module to access the command line
@@ -13,9 +14,27 @@ const rl = readline.createInterface({
 
 const pigLatin = (word) => {
 
-  // Your code here
+  const TL = word.toLowerCase().trim()
+
+  let firstVowel = TL.match(/[aeiou]/);
+  let firstPosition = TL.indexOf(firstVowel);
+
+  if (firstPosition > 0){
+    return TL.slice(firstPosition) + TL.slice(0, firstPosition) + "ay" ;
+  }
+  return TL + "yay";
+
+
+
+// helpful methods: includes indexOf slice
+
+
+
+
+
 
 }
+
 
 // the first function called in the program to get an input from the user
 // to run the function use the command: node main.js
